@@ -1,24 +1,50 @@
 ---
+import EndLabel from './EndLabel.astro';
+import { parseDate } from '../dates.ts';
+
 const { events } = Astro.props;
+
+const firstEventDate = parseDate(events[0].date);
+const lastEventDate = parseDate(events[events.length - 1].date);
 ---
 
 <style>
   .timeline {
-    --line-width: 2px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .timeline-wrapper {
     --padding: 4em;
-  
+    --line-width: 2px;
+    --event-width: 500px;
+    --event-timeline-offset: calc((var(--padding)) + 2px);
+    --event-timeline-center: calc(var(--event-width) + (var(--event-timeline-offset)) + var(--line-width));
+
+    position: relative;
+    margin: 0 var(--padding);
+  }
+
+  .timeline-events {
     display: inline-flex;
     flex-direction: column;
-  
-    padding-right: var(--padding);
+
+    padding: 0;
+    <!-- padding-right: var(--padding); -->
 
     border-right: var(--line-width) solid black;
   }
 
-  .event {
-    --event-width: 500px;
-    --event-timeline-offset: calc((var(--padding)) + 2px);
+  .timeline-line {
+    position: absolute;
+    width: var(--line-width);
+    height: 100%;
+    background: black;
+    left: calc(var(--event-timeline-center));
+  }
 
+  .event {
     position: relative;
 
     list-style: none;
@@ -47,7 +73,7 @@ const { events } = Astro.props;
     }
 
     &:nth-child(even) {
-      transform: translateX(calc(var(--event-width) + (var(--event-timeline-offset)) * 2 + var(--line-width)));
+      margin-left: calc((var(--event-timeline-center)) + (var(--event-timeline-offset)));
 
       &::after {
         left: calc(var(--event-timeline-offset) * -1);
@@ -74,16 +100,21 @@ const { events } = Astro.props;
   }
 </style>
 
-<div class="timeline-wrapper">
-  <ol class="timeline">{events.map((event) => <li class="event">
-    <div class="event-wrapper">
-    	<h2 id={event.id}>{event.title}</h2>
-    	<div>{event.date}</div>
-    	<p>{event.description}</p>
-      <h3>Sources</h3>
-      <ul class="sources">{event.sources.map((source) =>
-        <li><a href={source.url}>{source.title}</a>, <span class="source-site">{source.site}</span></li>)
-      }</ul>
-    </div>
-  </li>)}<ol>
+<div class="timeline">
+  <EndLabel date={firstEventDate} />
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+    <ol class="timeline-events">{events.map((event) => <li class="event">
+      <div class="event-wrapper">
+      	<h2 id={event.id}>{event.title}</h2>
+      	<div>{event.date}</div>
+      	<p>{event.description}</p>
+        <h3>Sources</h3>
+        <ul class="sources">{event.sources.map((source) =>
+          <li><a href={source.url}>{source.title}</a>, <span class="source-site">{source.site}</span></li>)
+        }</ul>
+      </div>
+    </li>)}<ol>
+  </div>
+  <EndLabel date={lastEventDate} />
 </div>
