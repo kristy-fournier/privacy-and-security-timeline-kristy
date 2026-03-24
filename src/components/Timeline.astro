@@ -19,8 +19,9 @@ const lastEventDate = parseDate(events[events.length - 1].date);
     --padding: 4em;
     --line-width: 2px;
     --event-width: 500px;
-    --event-timeline-offset: calc((var(--padding)) + 2px);
-    --event-timeline-center: calc(var(--event-width) + (var(--event-timeline-offset)) + var(--line-width));
+    --event-border-width: 1px;
+    --event-timeline-offset: calc((var(--padding)) + var(--event-border-width));
+    --event-timeline-center: calc(var(--event-width) + (var(--event-timeline-offset)) + var(--line-width) - 1px);
 
     position: relative;
     margin: 0 var(--padding);
@@ -31,16 +32,16 @@ const lastEventDate = parseDate(events[events.length - 1].date);
     flex-direction: column;
 
     padding: 0;
-    <!-- padding-right: var(--padding); -->
 
-    border-right: var(--line-width) solid black;
+    border-right: var(--line-width) solid var(--line-color);
   }
 
   .timeline-line {
     position: absolute;
     width: var(--line-width);
     height: 100%;
-    background: black;
+    background: var(--line-color);
+    border-radius: 2px;
     left: calc(var(--event-timeline-center));
   }
 
@@ -51,8 +52,11 @@ const lastEventDate = parseDate(events[events.length - 1].date);
 
     width: var(--event-width);
 
-    border: 2px solid black;
-    border-radius: 8px;
+    border: var(--event-border-width) solid var(--line-color);
+    border-radius: 12px;
+    background: var(--card-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &::after {
       --width: 3em;
@@ -63,40 +67,75 @@ const lastEventDate = parseDate(events[events.length - 1].date);
 
       position: absolute;
       right: calc(var(--event-timeline-offset) * -1);
-      /*top: calc(50% - (var(--height) / 2));*/
       top: calc(1.485em - (var(--height) / 2));
 
       height: var(--height);
       width: var(--width);
 
-      background: black;
+      background: var(--line-color);
+
+      border-radius: 0 2px 2px 0;
     }
 
     &:nth-child(even) {
-      margin-left: calc((var(--event-timeline-center)) + (var(--event-timeline-offset)));
+      margin-left: calc(1px + (var(--event-timeline-center)) + (var(--event-timeline-offset)));
+
+      border-radius: 2px 0 0 2px;
 
       &::after {
-        left: calc(var(--event-timeline-offset) * -1);
+        left: calc((var(--event-timeline-offset)) * -1);
       }
     }
+  }
+
+  .event:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   }
 
   .event-wrapper {
     margin: 16px;
   }
 
+  .event-wrapper > div {
+    font-size: 0.85em;
+    color: var(--muted-color);
+    margin-bottom: 0.5em;
+  }
+
+  .event-wrapper p {
+    margin: 0.75em 0;
+  }
+
   h2 {
     font-size: 1.125em;
+    color: var(--primary-color);
   }
 
   h3 {
     font-size: 0.9em;
     margin-bottom: 0.2em;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .sources {
-    font-size: 0.9em;
-    padding-left: 1.25em;
+    font-size: 0.85em;
+    padding-left: 1.2em;
+    color: var(--muted-color);
+  }
+
+  .sources li {
+    margin-bottom: 0.25em;
+  }
+
+  .sources a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .sources a:hover {
+    text-decoration: underline;
   }
 </style>
 

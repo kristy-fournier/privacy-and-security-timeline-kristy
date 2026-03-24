@@ -16,11 +16,23 @@ timeline.sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.
 
 		<style>
 			:root {
+				--background-color: #f8fafc;
+				--card-color: #ffffff;
+				--primary-color: #2563eb;
+				--line-color: #cbd5e1;
+				--text-color: #0f172a;
+				--muted-color: #64748b;
+
 				font-family: sans-serif;
 			}
 
 			* {
 				box-sizing: border-box;
+			}
+
+			body {
+				background: var(--background-color);
+				color: var(--text-color);
 			}
 		</style>
 	</head>
