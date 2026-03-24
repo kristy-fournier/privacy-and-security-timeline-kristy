@@ -1,7 +1,7 @@
 [
   {
     "id": "microsoft-bitlocker-not-e2ee",
-    "title": "Microsoft Confirmed to Backup BitLocker Keys in Plain-text, Hands Them Over to Law Enforcement",
+    "title": "Microsoft confirmed to backup BitLocker keys in plain-text, hands them over to law enforcement",
     "description": "Going against standard practice in the industry, Microsoft backs-up your BitLocker Recovery Keys in plain-text, rather than in an end-to-end encrypted form. Apple, on the other hand, backs-up your FileVault Recovery Key end-to-end encrypted as part of your keychain, rendering it entirely unreadable by them and, by extension, law enforcement.",
     "date": "2026-01-23",
     "sources": [
@@ -14,8 +14,8 @@
   },
   {
     "id": "canada-computers-card-skimmer",
-    "title": "Canada Computers Website Compromised, Card-skimming Malware Injected",
-    "description": "Canada Computers website was compromised by an attack who injected card-skimming malware on payment pages. Initially publicized on Reddit by a customer at least 18 days after initially injected, Canada Computers finally took action the same day and began notifying impacted customers 4 days later.",
+    "title": "Canada Computers' website compromised, card-skimming malware injected",
+    "description": "The website of Canadian electronics retailer Canada Computers was compromised by an attacker who injected card-skimming malware on payment pages. Initially publicized on Reddit by a customer at least 18 days after initially injected, Canada Computers finally took action the same day and began notifying impacted customers 4 days later.",
     "date": "2026-01-22",
     "sources": [
       {
@@ -55,7 +55,7 @@
   },
   {
     "id": "windscribe-dutch-server-takeover",
-    "title": "Dutch Authorities Seize VPN Server Without Warrant",
+    "title": "Dutch authorities seize VPN server without warrant",
     "description": "Windscribe, a Canadian VPN provider, had one of its servers seized by Dutch authorities, with the promise to return it once they \"fully analyze it.\" Windscribe has a no-logs policy and claims the server taken was using RAM disks, so no private user data should be found.",
     "date": "2026-02-05",
     "sources": [
@@ -80,7 +80,7 @@
   },
   {
     "id": "discord-adds-age-verification",
-    "title": "Discord Rolling Out Age Verification",
+    "title": "Discord announces upcoming global rollout of age verification",
     "description": "Discord adds age verification, where certain spaces and features are now restricted unless a user is verified to be an adult. Age verification will be implemented via a combination of automated age estimation, \"video selfies\", and uploaded identity documents. Discord claims that all video selfie processing is performed locally and that the video never leaves the user's device. For users that upload identity documents, they claim these documents will be deleted \"quickly\".",
     "date": "2026-02-09",
     "sources": [
@@ -118,7 +118,7 @@
   },
   {
     "id": "discord-persona-test",
-    "title": "Discord Collaboreating with Persona",
+    "title": "Discord revealed to be collaborating with Persona",
     "description": "Discord reveals that they lied about age-verification processing information never leaving a user's device and are actually using a server-side age-verification service-provider named Persona for a subset of users in the UK. They quickly retracted the warning shortly after releasing it on their website.",
     "date": "2026-02-15",
     "sources": [
@@ -131,7 +131,7 @@
   },
   {
     "id": "discord-cut-ties-with-persona",
-    "title": "Discord Cuts Ties with Persona",
+    "title": "Discord cuts ties with Persona",
     "description": "Persona is found to have front-end code accessible on the internet and on government servers. Around 2500 files were found to have been accessible for the governments, and apparently, Persona performed facial recognition checks against watchlists and lists of people of power. Discord has since announced that it is cutting ties with Persona.",
     "date": "2026-02-24",
     "sources": [
@@ -176,7 +176,7 @@
   },
   {
     "id": "instagram-e2ee-messages",
-    "title": "Instagram Ending Support for End-To-End Encrypted Direct Messages",
+    "title": "Instagram ending support for end-to-end encrypted direct messages",
     "description": "Meta has updated Instagram's help pages, stating that E2EE DMs will no longer be supported as of May 8th, 2026. E2EE ensures that messages cannot be meaningfully intercepted by third parties, including Meta, serving as a key mechanism of user privacy. Meta also maintains Messenger and WhatsApp, potentially foreshadowing incoming changes to these platforms as well.",
     "date": "2026-03-13",
     "sources": [
