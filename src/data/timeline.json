@@ -225,5 +225,19 @@
         "url": "https://uk.finance.yahoo.com/news/nearly-half-million-lloyds-customers-090606533.html"
       }
     ]
+  },
+  {
+    "id": "microsoft-whatsapp-malware-warn",
+    "issue-author": "KhushpreetK (#12)",
+    "title": "Microsoft Warns of WhatsApp-Delivered VBS Malware Hijacking Windows via UAC Bypass",
+    "description": "Microsoft has identified a sophisticated malware campaign that uses WhatsApp messages to deliver malicious Visual Basic Script (VBS) files, initiating a multi-stage infection process. Once a user executes the script, it creates hidden system folders and deploys renamed legitimate Windows tools to avoid detection, a tactic known as “living-off-the-land.” The malware then downloads additional payloads from trusted cloud platforms like AWS, Tencent Cloud, and Backblaze, eventually installing malicious MSI packages to maintain persistence. It further weakens system defenses by manipulating User Account Control (UAC) settings and modifying the Windows registry to gain elevated privileges. In some cases, legitimate remote access tools like AnyDesk are installed, allowing attackers to maintain control, exfiltrate data, or deploy additional malware, making the attack both stealthy and highly effective.",
+    "date": "2026-04-01",
+    "sources": [
+      {
+        "site": "The Hacker News",
+        "title": "Microsoft Warns of WhatsApp-Delivered VBS Malware Hijacking Windows via UAC Bypass",
+        "url": "https://thehackernews.com/2026/04/microsoft-warns-of-whatsapp-delivered.html"
+      }
+    ]
   }
 ]
