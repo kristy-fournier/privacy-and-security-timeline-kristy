@@ -209,8 +209,8 @@
   },
   {
     "id": "linkedin-scans-browser-extensions",
-    "title": "Linkedin scanning for 6000+ Chrome extensions from user browsers for fingerprinting",
-    "description": "Linkedin was found to be injecting a JavaScript fingerprinting script into Chromium-based browsers to identify installed extensions and device telemetry in order to potentially fingerprint and profile users.",
+    "title": "LinkedIn scanning for 6000+ Chrome extensions from user browsers for fingerprinting",
+    "description": "LinkedIn was found to be injecting a JavaScript fingerprinting script into Chromium-based browsers to identify installed extensions and device telemetry in order to potentially fingerprint and profile users.",
     "date": "2026-04-03",
     "sources": [
       {
